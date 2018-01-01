@@ -2,26 +2,34 @@ import {Injectable} from '@angular/core';
 import {User} from '../../model/user';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {DataService} from './data.service';
 
 @Injectable()
 export class AuthService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private dataService: DataService) {
   }
 
   signIn(credentials: User): Observable<User> {
-    return this.http.post<User>('', JSON.stringify(credentials));
+    return this.http.post<User>('', JSON.stringify(credentials)).pipe();
   }
 
   signOut() {
+    this.dataService.clear();
   }
 
-  signUp() {
+  signUp(user: User) {
+    return this.http.post<User>('', JSON.stringify(user)).pipe();
   }
 
-  refreshToken() {
+  refreshToken(credentials: User): Observable<User> {
+    return this.http.post<User>('', JSON.stringify(credentials)).pipe();
   }
 
-  checkSession() {
+  checkSession(): boolean {
+    return this.dataService.getToken() != null && this.dataService.getRole() != null;
   }
+
+
 }

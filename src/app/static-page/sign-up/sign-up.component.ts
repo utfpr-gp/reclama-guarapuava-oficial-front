@@ -52,7 +52,7 @@ export class SignUpComponent implements OnInit {
 
   private buildForm(): void {
     const pwd = new FormControl('', Validators.required);
-    const certainPassword = new FormControl('', CustomValidators.equalTo(pwd));
+    const certainPassword = new FormControl('', [CustomValidators.equalTo(pwd), Validators.required]);
 
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
