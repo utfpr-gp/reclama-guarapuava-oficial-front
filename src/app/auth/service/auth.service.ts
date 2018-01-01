@@ -5,4 +5,16 @@ export class AuthService {
 
   constructor() {
   }
+
+  signIn() {
+  }
+
+  signOut() {
+  }
+
+  signUp() {
+  }
+
+  refreshToken() {
+  }
 }

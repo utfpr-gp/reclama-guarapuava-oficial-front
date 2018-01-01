@@ -11,13 +11,19 @@ import {FooterComponent} from './layout/footer/footer.component';
 import {AppLoaderModule} from './layout/app-loader/app-loader.module';
 import {AuthModule} from './auth/auth.module';
 import { HomeComponent } from './static-page/home/home.component';
+import { SignInComponent } from './static-page/sign-in/sign-in.component';
+import { SignOutComponent } from './static-page/sign-out/sign-out.component';
+import { SignUpComponent } from './static-page/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SignInComponent,
+    SignOutComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
