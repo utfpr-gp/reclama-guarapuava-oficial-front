@@ -1,3 +1,39 @@
-<p>
-  sign-in works!
-</p>
+<section class="login home-section">
+  <mat-grid-list cols="12" rowHeight="400">
+    <mat-grid-tile colspan="12">
+      <mat-card>
+        <div class="container">
+          <div class="section-header">
+            <h2>Seja bem Vindo!</h2>
+          </div>
+
+
+          <mat-card-content>
+            <form disabled="disable" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+              <mat-form-field fxLayout="row" class="midle-width">
+                <input matInput  type="text" id="login" formControlName="login"
+                       placeholder="Login">
+              </mat-form-field>
+
+              <mat-form-field fxLayout="row" class="midle-width">
+                <input matInput type="password" id="password" formControlName="password"
+                       placeholder="Senha">
+              </mat-form-field>
+
+              <button fxLayout="row" mat-raised-button color="primary" type="submit"
+                      name="action">
+                Login
+              </button>
+              <mat-divider></mat-divider>
+            </form>
+            <mat-card-footer fxLayout="row">
+              Ainda não tem seu cadastro?
+              <button mat-button color="link" routerLink="/auth/sign-up">Clique aqui</button>
+            </mat-card-footer>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>

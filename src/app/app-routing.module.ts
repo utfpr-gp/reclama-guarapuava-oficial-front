@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule, Routes, UrlSerializer} from '@angular/router';
 import {AuthAdminGuard} from './auth/guard/auth.admin.guard';
 import {HomeComponent} from './static-page/home/home.component';
 import {SignInComponent} from './static-page/sign-in/sign-in.component';
@@ -20,7 +20,11 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     useHash: true,
-    scrollPositionRestoration: 'enabled'
+    scrollPositionRestoration: 'enabled',
+    malformedUriErrorHandler: (error: URIError, urlSerializer: UrlSerializer, url: string) => {
+      console.log(url);
+      return urlSerializer.parse('/');
+    }
   })],
   exports: [RouterModule]
 })

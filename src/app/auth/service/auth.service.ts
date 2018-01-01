@@ -1,12 +1,16 @@
 import {Injectable} from '@angular/core';
+import {User} from '../../model/user';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  signIn() {
+  signIn(credentials: User): Observable<User> {
+    return this.http.post<User>('', JSON.stringify(credentials));
   }
 
   signOut() {
@@ -16,5 +20,8 @@ export class AuthService {
   }
 
   refreshToken() {
+  }
+
+  checkSession() {
   }
 }

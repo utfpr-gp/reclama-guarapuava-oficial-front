@@ -10,10 +10,10 @@ import {NavbarComponent} from './layout/navbar/navbar.component';
 import {FooterComponent} from './layout/footer/footer.component';
 import {AppLoaderModule} from './layout/app-loader/app-loader.module';
 import {AuthModule} from './auth/auth.module';
-import { HomeComponent } from './static-page/home/home.component';
-import { SignInComponent } from './static-page/sign-in/sign-in.component';
-import { SignOutComponent } from './static-page/sign-out/sign-out.component';
-import { SignUpComponent } from './static-page/sign-up/sign-up.component';
+import {HomeComponent} from './static-page/home/home.component';
+import {SignInComponent} from './static-page/sign-in/sign-in.component';
+import {SignOutComponent} from './static-page/sign-out/sign-out.component';
+import {SignUpComponent} from './static-page/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { SignUpComponent } from './static-page/sign-up/sign-up.component';
     HomeComponent,
     SignInComponent,
     SignOutComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +33,7 @@ import { SignUpComponent } from './static-page/sign-up/sign-up.component';
     CoreModule,
     AuthModule,
     AppLoaderModule,
+
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'}
