@@ -4,6 +4,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {NgxMaskModule} from 'ngx-mask';
+import {CustomFormsModule} from 'ng2-validation';
 
 @NgModule({
   imports: [
@@ -17,6 +19,8 @@ import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatTool
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    NgxMaskModule.forRoot({}),
+    CustomFormsModule,
   ],
   declarations: [],
   exports: [
@@ -30,6 +34,8 @@ import {MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatTool
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    NgxMaskModule,
+    CustomFormsModule,
   ]
 })
 export class SharedModule {

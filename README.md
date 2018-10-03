@@ -61,3 +61,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       | static-page | --module to static pages
 
 ```
+
+## libs
+
++ [Masks](https://www.npmjs.com/package/ngx-mask)
++ [Validation](https://www.npmjs.com/package/ng2-validation)
