@@ -10,8 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   declarations: []
 })
-export class CoreModule {
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+export class AuthModule {
+  constructor(@Optional() @SkipSelf() parentModule: AuthModule) {
     throwIfAlreadyLoaded(parentModule, 'CoreModule');
   }
 }

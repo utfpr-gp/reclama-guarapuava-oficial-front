@@ -37,21 +37,27 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ```
   app |
-      | core |
-             | guard    --all router guards 
+      | auth | --module to authentication
+             | interceptor  --all request and errors interceptos                  
+             | guard    --all router guards
+             | service -- all services to auth
+             | core.module.ts   -- imported ONLY in root module! This module are a Singleton  DO NOT import in another module
+                           
+      | core |             
              | interceptor  --all request and errors interceptos
-             | service  --all services 
+             | data-service  --all services (where
                       | AbstractService  --all services must to extends this abstract class
-             core.module.ts   -- imported ONLY in root module! This module are a Singleton  DO NOT import in another module
+             | core.module.ts   -- imported ONLY in root module! This module are a Singleton  DO NOT import in another module
             
       | layout
              | footer            
              | navbar  
-                       
+      | model  --all models
       | shared
-             | component  --all shared components
-             | model  --all models
-             shared.module.ts --import in your module, this contain all modules where you are need
-      
+             | component  --all shared components          
+             | pipe  --all shared pipes          
+             | directive  --all shared directives          
+             | shared.module.ts --import in your module, this contain all modules where you are need
+      | static-page | --module to static pages
 
 ```
