@@ -2,9 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
++ Angular-cli >= 6.1.x
++ Typescript >= 3.0.3
++ Node latest version
+
+## first steps
+
++ Run `npm i` or `npm install`
++ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -25,3 +32,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Project Structure
+
+```
+  app |
+      | core |
+             | guard    --all router guards 
+             | interceptor  --all request and errors interceptos
+             | service  --all services 
+                      | AbstractService  --all services must to extends this abstract class
+             core.module.ts   -- imported ONLY in root module! This module are a Singleton  DO NOT import in another module
+            
+      | layout
+             | footer            
+             | navbar  
+                       
+      | shared
+             | component  --all shared components
+             | model  --all models
+             shared.module.ts --import in your module, this contain all modules where you are need
+      
+
+```
