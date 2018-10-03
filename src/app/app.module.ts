@@ -22,7 +22,9 @@ import {FooterComponent} from './layout/footer/footer.component';
     SharedModule,
     CoreModule,
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
+  ],
   exports: [
     SharedModule
   ],
