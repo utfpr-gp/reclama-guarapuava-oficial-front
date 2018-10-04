@@ -45,11 +45,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
                            
       | core |             
              | interceptor  --all request and errors interceptos
-             | data-service  --all services (where
+             | data-service  --all services who make requests to server (where
                       | AbstractService  --all services must to extends this abstract class
+             | service --all services where do not make requests to server         
              | core.module.ts   -- imported ONLY in root module! This module are a Singleton  DO NOT import in another module
             
       | layout
+             | app-loader -- spinner when page load 
              | footer            
              | navbar  
       | model  --all models
@@ -59,10 +61,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
              | directive  --all shared directives          
              | shared.module.ts --import in your module, this contain all modules where you are need
       | static-page | --module to static pages
+      | app.module.ts --root module
+      | app-routing.module --root routes module
+      | module.import.guard --throw exception where singleton modules are imported inside multiples modules
 
 ```
 
 ## libs
 
++ [Angular Material](https://material.angular.io/)
 + [Masks](https://www.npmjs.com/package/ngx-mask)
 + [Validation](https://www.npmjs.com/package/ng2-validation)

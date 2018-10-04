@@ -3,6 +3,7 @@ import {throwIfAlreadyLoaded} from '../module.import.guard';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {SharedModule} from '../shared/shared.module';
 import {TokenInterceptor} from './interceptor/token.interceptor';
+import {AuthAdminGuard} from './guard/auth.admin.guard';
 
 @NgModule({
   imports: [
@@ -10,6 +11,7 @@ import {TokenInterceptor} from './interceptor/token.interceptor';
   ],
   declarations: [],
   providers: [
+    AuthAdminGuard,
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
   ]
 })

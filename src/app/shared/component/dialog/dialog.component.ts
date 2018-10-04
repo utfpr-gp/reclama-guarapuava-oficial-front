@@ -16,10 +16,11 @@ export class DialogComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.data.title == 'Sucesso')
+    if (this.data.title === 'Sucesso') {
       this.classTitle = 'success-bg';
-    if (this.data.title == 'Erro')
+    } else if (this.data.title === 'Erro') {
       this.classTitle = 'erro-bg';
+    }
   }
 
   onNoClick(): void {
