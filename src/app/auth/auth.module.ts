@@ -1,17 +1,20 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {throwIfAlreadyLoaded} from '../module.import.guard';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {SharedModule} from '../shared/shared.module';
+import {TokenInterceptor} from './interceptor/token.interceptor';
 
 @NgModule({
   imports: [
-    CommonModule,
-    HttpClientModule
+    SharedModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+  ]
 })
 export class AuthModule {
   constructor(@Optional() @SkipSelf() parentModule: AuthModule) {
-    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+    throwIfAlreadyLoaded(parentModule, 'AuthModule');
   }
 }

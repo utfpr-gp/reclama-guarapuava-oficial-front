@@ -1,0 +1,25 @@
+<mat-card>
+  <div  class="text-center {{classTitle}}">
+    <mat-card-title class="text-white">
+      {{data.title}}
+    </mat-card-title>
+  </div>
+  <mat-card-content>
+
+    <mat-grid-list cols="2">
+      <mat-grid-tile [colspan]="2">
+        {{data.message}}
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+
+        <button mat-button [mat-dialog-close]="data.message" tabindex="2">{{data.confirmButton}}</button>
+        <button mat-raised-button color="primary"
+                *ngIf="data.cancelButton != null"
+                (click)="onNoClick()" tabindex="-1">
+          {{data.cancelButton}}
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card-content>
+</mat-card>

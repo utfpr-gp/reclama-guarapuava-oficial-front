@@ -8,6 +8,7 @@ import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 import {NavbarComponent} from './layout/navbar/navbar.component';
 import {FooterComponent} from './layout/footer/footer.component';
+import {AppLoaderModule} from './layout/app-loader/app-loader.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {FooterComponent} from './layout/footer/footer.component';
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
+    AppLoaderModule,
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'}

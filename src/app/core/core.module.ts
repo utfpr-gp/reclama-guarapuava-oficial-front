@@ -1,14 +1,18 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {ErrorHandler, NgModule, Optional, SkipSelf} from '@angular/core';
 import {throwIfAlreadyLoaded} from '../module.import.guard';
-import {HttpClientModule} from '@angular/common/http';
+import {WINDOW_PROVIDERS} from './helper/window.helper';
+import {ErrorhandlerInterceptor} from './interceptor/errorhandler.interceptor';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    HttpClientModule
+    SharedModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [
+    WINDOW_PROVIDERS,
+    {provide: ErrorHandler, useClass: ErrorhandlerInterceptor},
+  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
