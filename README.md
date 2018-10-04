@@ -72,3 +72,32 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 + [Angular Material](https://material.angular.io/)
 + [Masks](https://www.npmjs.com/package/ngx-mask)
 + [Validation](https://www.npmjs.com/package/ng2-validation)
+
+## How to use components
+
+### Dialog
+
+```
+  | shared |
+           | component
+                       | dialog
+```
+
+inside your component Typescript 
+
+```typescript
+  constructor(private dialog: MatDialog){}
+  
+  openDialog(title: string, message: string, confirmBtn: string) {
+    let dialog = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {title: title, message: message, confirmButton: confirmBtn}
+    });
+
+    dialog.afterClosed().subscribe(result => {
+    });
+  }
+```
+
+inside `result` you can take result from the user
+
