@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AppComponent} from './app.component';
 import {AuthAdminGuard} from './auth/guard/auth.admin.guard';
+import {HomeComponent} from './static-page/home/home.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent, canActivate: [AuthAdminGuard]}
+  {path: '', component: HomeComponent, canActivate: [AuthAdminGuard]}
 ];
 
 @NgModule({

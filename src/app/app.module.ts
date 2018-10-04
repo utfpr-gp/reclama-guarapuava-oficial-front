@@ -9,12 +9,15 @@ import {CoreModule} from './core/core.module';
 import {NavbarComponent} from './layout/navbar/navbar.component';
 import {FooterComponent} from './layout/footer/footer.component';
 import {AppLoaderModule} from './layout/app-loader/app-loader.module';
+import {AuthModule} from './auth/auth.module';
+import { HomeComponent } from './static-page/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +25,7 @@ import {AppLoaderModule} from './layout/app-loader/app-loader.module';
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
+    AuthModule,
     AppLoaderModule,
   ],
   providers: [

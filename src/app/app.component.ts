@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'utfpr-root',
-  templateUrl: './app.component.html',
+  template: `
+    <utfpr-navbar></utfpr-navbar>
+    <utfpr-footer></utfpr-footer>
+  `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
