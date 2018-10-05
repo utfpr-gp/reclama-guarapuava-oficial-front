@@ -89,7 +89,7 @@ inside your component Typescript
   constructor(private dialog: MatDialog){}
   
   openDialog(title: string, message: string, confirmBtn: string) {
-    let dialog = this.dialog.open(DialogComponent, {
+    const dialog = this.dialog.open(DialogComponent, {
       width: '250px',
       data: {title: title, message: message, confirmButton: confirmBtn}
     });
