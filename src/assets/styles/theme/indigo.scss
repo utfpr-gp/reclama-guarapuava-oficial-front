@@ -1,0 +1,172 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// You can define colors here (using http://mcg.mbitson.com)
+$mat-primary: (
+  50: #e0f2ff,
+  100: #b3dfff,
+  200: #80c9ff,
+  300: #4db3ff,
+  400: #26a3ff,
+  500: #0093ff,
+  600: #008bff,
+  700: #0080ff,
+  800: #0076ff,
+  900: #0064ff,
+  A100: #ffffff,
+  A200: #f2f6ff,
+  A400: #bfd4ff,
+  A700: #a6c3ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-accent: (
+  50: #fffde0,
+  100: #fffab3,
+  200: #fff780,
+  300: #fff34d,
+  400: #fff126,
+  500: #ffee00,
+  600: #ffec00,
+  700: #ffe900,
+  800: #ffe700,
+  900: #ffe200,
+  A100: #ffffff,
+  A200: #fffdf2,
+  A400: #fff7bf,
+  A700: #fff3a6,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// mandatory stuff for theming
+$egret-primary: mat-palette($mat-primary);
+$egret-accent: mat-palette($mat-accent);
+
+// include the custom theme components into a theme object
+$egret-theme: mat-light-theme($egret-primary, $egret-accent);
+
+$primary-dark: darken(map-get($mat-primary, 500), 8%);
+
+// include the custom theme object into the angular material theme
+.egret-indigo {
+  @include angular-material-theme($egret-theme);
+
+  .mat-bg-primary,
+  .topbar,
+  .chats-wrap .conversations-hold .single-conversation.me .conversation-msg,
+  .ngx-datatable .datatable-footer .datatable-pager .pager .pages.active a,
+  .fileupload-drop-zone.dz-file-over,
+  .toolbar-avatar.online > .status-dot,
+  .cal-open-day-events,
+  div.hopscotch-bubble {
+    background: map-get($mat-primary, 500) !important;
+    color: #ffffff !important;
+  }
+  .mat-color-primary,
+  .list-item-active,
+  .sidebar-panel.mat-sidenav .sidebar-list-item.open mat-icon:not(.menu-caret),
+  .sidebar-panel.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > a > span,
+  .sidebar-panel.mat-sidenav .sidebar-list-item.open .sub-menu .mat-list-item.selected a {
+    color: map-get($mat-primary, 500) !important;
+  }
+  .sidebar-panel .mat-nav-list .mat-list-item {
+    color: rgba(0, 0, 0, 0.94)
+  }
+  .sidebar-panel.mat-sidenav .sidebar-list-item.open > .mat-list-item-content > .sub-menu,
+  .sidebar-panel.mat-sidenav .sidebar-list-item.open mat-icon:not(.menu-caret),
+  .list-item-active {
+    border-color: map-get($mat-primary, 500) !important;
+  }
+  .sidebar-panel.mat-sidenav {
+    background: no-repeat;
+  }
+  .breadcrumb-bar,
+  .default-bg {
+    background: #ffffff !important;
+  }
+  /* Hopscotch Tour */
+  div.hopscotch-bubble {
+    border-color: $primary-dark;
+  }
+  /* up arrow  */
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.up .hopscotch-bubble-arrow-border {
+    border-bottom: 17px solid $primary-dark;
+  }
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.up .hopscotch-bubble-arrow {
+    border-bottom: 17px solid map-get($mat-primary, 500);
+    top: -16px;
+  }
+  /* right arrow */
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.right .hopscotch-bubble-arrow-border {
+    border-left: 17px solid $primary-dark;
+  }
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.right .hopscotch-bubble-arrow {
+    border-left: 17px solid map-get($mat-primary, 500);
+    left: -1px;
+  }
+  /* bottom arrow */
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow-border {
+    border-top: 17px solid $primary-dark;
+  }
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow {
+    border-top: 17px solid map-get($mat-primary, 500);
+    top: -18px;
+  }
+  /* Left Arrow */
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow-border {
+    border-right: 17px solid $primary-dark;
+  }
+  div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow {
+    left: 1px;
+    border-right: 17px solid map-get($mat-primary, 500);
+  }
+
+  .mat-bg-accent,
+  div.hopscotch-bubble .hopscotch-bubble-number,
+  div.hopscotch-bubble .hopscotch-nav-button.next:hover,
+  div.hopscotch-bubble .hopscotch-nav-button.next {
+    background-color: map-get($mat-accent, 500);
+    color: black;
+  }
+  .mat-bg-warn {
+    background-color: #f44336;
+    color: white;
+  }
+  .mat-color-accent {
+    color: map-get($mat-accent, 500);
+  }
+  .mat-color-warn {
+    color: #f44336;
+  }
+}

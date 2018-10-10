@@ -101,3 +101,6 @@ inside your component Typescript
 
 inside `result` you can take result from the user
 
+### Custom colors
+
++ [Material Design Palette Generator](http://mcg.mbitson.com)
