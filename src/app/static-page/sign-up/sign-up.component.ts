@@ -59,14 +59,21 @@ export class SignUpComponent implements OnInit {
   }
 
   private buildForm(): void {
+    const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     const pwd = new FormControl('', Validators.required);
     const certainPassword = new FormControl('', [CustomValidators.equalTo(pwd), Validators.required]);
 
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
-      email: [null, Validators.required],
+      email: [null, [
+        Validators.required,
+        Validators.email
+      ]],
       gender: [null, Validators.required],
-      dateOfBirth: [null, Validators.required],
+      dateOfBirth: [null, [
+        Validators.required,
+        CustomValidators.maxDate(yesterday)
+      ]],
       password: pwd,
       confirmPassword: certainPassword,
     });

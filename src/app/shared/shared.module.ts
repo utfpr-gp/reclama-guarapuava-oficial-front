@@ -25,6 +25,7 @@ import {NgxMaskModule} from 'ngx-mask';
 import {CustomFormsModule} from 'ng2-validation';
 import {DialogComponent} from './component/dialog/dialog.component';
 import {CamelCasePipe} from './pipe/camel-case.pipe';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 const NG_MODULES = [
   CommonModule,
@@ -34,6 +35,7 @@ const NG_MODULES = [
 ];
 const MISC_MODULES = [
   CustomFormsModule,
+  FlexLayoutModule,
 ];
 const MATERIAL_MODULES = [
   LayoutModule,
