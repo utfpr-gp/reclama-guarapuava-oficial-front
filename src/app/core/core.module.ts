@@ -4,6 +4,8 @@ import {WINDOW_PROVIDERS} from './helper/window.helper';
 import {ErrorhandlerInterceptor} from './interceptor/errorhandler.interceptor';
 import {SharedModule} from '../shared/shared.module';
 import {GenderService} from './data-service/gender.service';
+import {CityService} from './data-service/city.service';
+import {NeighborhoodService} from './data-service/neighborhood.service';
 
 @NgModule({
   imports: [
@@ -13,6 +15,8 @@ import {GenderService} from './data-service/gender.service';
   providers: [
     WINDOW_PROVIDERS,
     GenderService,
+    CityService,
+    NeighborhoodService,
     {provide: ErrorHandler, useClass: ErrorhandlerInterceptor},
   ]
 })

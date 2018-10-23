@@ -4,6 +4,8 @@ import {User} from '../../model/user';
 import {AuthService} from '../../auth/service/auth.service';
 import {GenderService} from '../../core/data-service/gender.service';
 import {CustomValidators} from 'ng2-validation';
+import {CityService} from '../../core/data-service/city.service';
+import {NeighborhoodService} from '../../core/data-service/neighborhood.service';
 
 @Component({
   selector: 'utfpr-sign-up',
@@ -14,14 +16,20 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
   genders$;
+  neighborhoods$;
+  cities$;
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
-              private genderService: GenderService) {
+              private genderService: GenderService,
+              private cityService: CityService,
+              private neighborhoodService: NeighborhoodService) {
   }
 
   ngOnInit() {
-    this.genders$ = this.genderService.all();
+    this.genders$ = this.cityService.all();
+    this.cities$ = this.genderService.all();
+    this.neighborhoods$ = this.neighborhoodService.all();
     this.buildForm();
   }
 
@@ -37,7 +45,7 @@ export class SignUpComponent implements OnInit {
 
 
   private resetForm(): void {
-    this.form.reset()
+    this.form.reset();
   }
 
   private mountModel(): User {
