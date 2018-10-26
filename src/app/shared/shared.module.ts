@@ -14,6 +14,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatMenuModule,
   MatPaginatorModule,
   MatSelectModule,
   MatSidenavModule,
@@ -26,6 +27,7 @@ import {CustomFormsModule} from 'ng2-validation';
 import {DialogComponent} from './component/dialog/dialog.component';
 import {CamelCasePipe} from './pipe/camel-case.pipe';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {DashboardComponent} from './component/dashboard/dashboard.component';
 
 const NG_MODULES = [
   CommonModule,
@@ -47,6 +49,7 @@ const MATERIAL_MODULES = [
   MatGridListModule,
   MatInputModule,
   MatIconModule,
+  MatMenuModule,
   MatListModule,
   MatPaginatorModule,
   MatSidenavModule,
@@ -55,22 +58,35 @@ const MATERIAL_MODULES = [
   MatToolbarModule,
 ];
 
+const COMPONENTS = [
+  DashboardComponent
+];
+
 @NgModule({
   imports: [
     NG_MODULES,
     MISC_MODULES,
     MATERIAL_MODULES,
-    NgxMaskModule.forRoot({})
+    NgxMaskModule.forRoot({}),
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   declarations: [
     DialogComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    DashboardComponent,
+    COMPONENTS
   ],
   exports: [
     NG_MODULES,
     MISC_MODULES,
     MATERIAL_MODULES,
-    NgxMaskModule
+    NgxMaskModule,
+    COMPONENTS
   ],
   entryComponents: [
     DialogComponent

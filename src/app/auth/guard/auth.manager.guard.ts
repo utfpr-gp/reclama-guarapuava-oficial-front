@@ -4,9 +4,10 @@ import {Observable} from 'rxjs';
 import {AuthService} from '../service/auth.service';
 import {DataService} from '../service/data.service';
 
-@Injectable()
-export class AuthUserGuard implements CanActivate {
-
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthManagerGuard implements CanActivate {
   constructor(private router: Router,
               private authService: AuthService,
               private dataService: DataService) {
@@ -15,7 +16,7 @@ export class AuthUserGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.authService.checkSession() && this.dataService.getRole() === 'USER') {
+    if (this.authService.checkSession() && this.dataService.getRole() === 'MANAGER') {
       return true;
     } else {
       this.router.navigate(['/auth/sign-in']);
