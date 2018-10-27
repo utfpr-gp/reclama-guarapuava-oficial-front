@@ -1,0 +1,68 @@
+{
+  "genders": [
+    {
+      "id": "1",
+      "description": "Male",
+      "initial": "M"
+    },
+    {
+      "id": "2",
+      "description": "Female",
+      "initial": "F"
+    }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "name": "Guarapuava",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        },
+        {
+          "id": 2,
+          "name": "Boqueirao"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Foz do Iguaçu",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        },
+        {
+          "id": 2,
+          "name": "Morumbi"
+        },
+        {
+          "id": 3,
+          "name": "Morumbi 2"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Curitiba",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cascavel",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 import {AbstractEntity} from './abstract-entity';
-import {City} from './city';
 
 export class Neighborhood extends AbstractEntity {
 
@@ -7,7 +6,7 @@ export class Neighborhood extends AbstractEntity {
     public id?: number,
     public createdAt?: Date,
     public updatedAt?: Date,
-    public city?: City) {
+    public name?: string) {
     super(id, createdAt, updatedAt);
   }
 }

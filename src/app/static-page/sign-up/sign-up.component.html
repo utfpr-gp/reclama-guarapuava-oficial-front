@@ -20,7 +20,25 @@
 
         <mat-form-field class="midle-width" fxFlex="100">
           <mat-select placeholder="Informe o Sexo" formControlName="gender" id="gender">
-            <mat-option *ngFor="let gender of genders$ | async" [value]="gender">{{ gender?.description }}</mat-option>
+            <mat-option *ngFor="let gender of genders$ | async" [value]="gender">
+              {{ gender?.description }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="midle-width" fxFlex="100">
+          <mat-select placeholder="Informe a cidade" formControlName="city" id="city">
+            <mat-option *ngFor="let city of cities$ | async" (onSelectionChange)="onCityChose(city)" [value]="city">
+              {{ city?.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="midle-width" fxFlex="100">
+          <mat-select placeholder="Informe o bairro" formControlName="neighborhood" id="neighborhood">
+            <mat-option *ngFor="let neighborhood of neighborhoods | async" [value]="neighborhood">
+              {{ neighborhood?.name }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
 

@@ -33,13 +33,9 @@ import {SignUpComponent} from './static-page/sign-up/sign-up.component';
     CoreModule,
     AuthModule,
     AppLoaderModule,
-
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt-BR'}
-  ],
-  exports: [
-    SharedModule
   ],
   bootstrap: [AppComponent]
 })

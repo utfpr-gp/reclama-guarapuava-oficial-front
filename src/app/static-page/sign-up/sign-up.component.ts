@@ -5,7 +5,7 @@ import {AuthService} from '../../auth/service/auth.service';
 import {GenderService} from '../../core/data-service/gender.service';
 import {CustomValidators} from 'ng2-validation';
 import {CityService} from '../../core/data-service/city.service';
-import {NeighborhoodService} from '../../core/data-service/neighborhood.service';
+import {Neighborhood} from '../../model/neighborhood';
 
 @Component({
   selector: 'utfpr-sign-up',
@@ -16,33 +16,30 @@ export class SignUpComponent implements OnInit {
 
   form: FormGroup;
   genders$;
-  neighborhoods$;
   cities$;
+  neighborhoods: Neighborhood[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private genderService: GenderService,
-              private cityService: CityService,
-              private neighborhoodService: NeighborhoodService) {
+              private cityService: CityService) {
   }
 
   ngOnInit() {
-    this.genders$ = this.cityService.all();
-    this.cities$ = this.genderService.all();
-    this.neighborhoods$ = this.neighborhoodService.all();
+    this.genders$ = this.genderService.all();
+    this.cities$ = this.cityService.all();
     this.buildForm();
   }
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.signIn(this.mountModel()).subscribe(res => {
-
-      }, error => {
-
-      });
+      this.authService.signIn(this.mountModel());
     }
   }
 
+  onCityChose(city) {
+    this.neighborhoods = city.neighborhoods;
+  }
 
   private resetForm(): void {
     this.form.reset();
@@ -55,16 +52,22 @@ export class SignUpComponent implements OnInit {
     model.dateOfBirth = this.form.value.dateOfBirth;
     model.password = this.form.value.password;
     model.email = this.form.value.email;
+    model.address.neighborhood = this.form.value.neighborhood;
     return new User();
   }
 
   private buildForm(): void {
     const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     const pwd = new FormControl('', Validators.required);
-    const certainPassword = new FormControl('', [CustomValidators.equalTo(pwd), Validators.required]);
+    const certainPassword = new FormControl('', [
+      CustomValidators.equalTo(pwd),
+      Validators.required
+    ]);
 
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
+      city: [null, Validators.required],
+      neighborhood: [null, Validators.required],
       email: [null, [
         Validators.required,
         Validators.email

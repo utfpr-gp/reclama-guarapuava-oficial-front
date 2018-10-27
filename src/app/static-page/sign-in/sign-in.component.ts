@@ -21,13 +21,17 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.signIn(this.mountModel()).subscribe(res => {
-      });
+      this.authService.signIn(this.mountModel());
+      /*.subscribe(res => {
+      });*/
     }
   }
 
   private mountModel(): User {
-    return new User();
+    const user = new User();
+    user.name = this.form.value.login;
+    user.password = this.form.value.password;
+    return user;
   }
 
   private buildForm() {

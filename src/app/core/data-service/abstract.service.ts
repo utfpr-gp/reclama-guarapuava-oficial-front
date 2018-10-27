@@ -8,18 +8,18 @@ export abstract class AbstractService<T extends AbstractEntity> {
   }
 
   all(): Observable<T> {
-    return this.http.get<T>(this.url);
+    return this.http.get<T>(this.url).pipe();
   }
 
   create(model: T): Observable<T> {
-    return this.http.post<T>(this.url, JSON.stringify(model));
+    return this.http.post<T>(this.url, JSON.stringify(model)).pipe();
   }
 
   edit(model: T): Observable<T> {
-    return this.http.put<T>(this.url + model.id, JSON.stringify(model));
+    return this.http.put<T>(this.url + model.id, JSON.stringify(model)).pipe();
   }
 
   destroy(model: T): Observable<T> {
-    return this.http.delete<T>(this.url + model.id);
+    return this.http.delete<T>(this.url + model.id).pipe();
   }
 }

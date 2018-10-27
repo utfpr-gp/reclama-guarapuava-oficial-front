@@ -9,7 +9,7 @@ import {AuthManagerGuard} from './auth/guard/auth.manager.guard';
 import {AuthUserGuard} from './auth/guard/auth.user.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, canActivate: [AuthAdminGuard]},
+  {path: '', component: HomeComponent},
   {
     path: 'auth', children: [
       {path: 'sign-in', component: SignInComponent},

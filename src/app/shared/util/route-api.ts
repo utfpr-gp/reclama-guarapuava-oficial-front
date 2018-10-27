@@ -6,4 +6,6 @@ export class RouteApi {
   static REGISTER = environment.apiURL + 'register';
   static LVL_ACCESS = environment.apiURL + 'users-roles/';
   static GENDERS = environment.apiURL + 'genders/';
+  static CITIES = environment.apiURL + 'cities/';
+  static NEIGHBORHOOD = environment.apiURL + 'neighborhood/';
 }
