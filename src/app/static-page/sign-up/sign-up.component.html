@@ -1,0 +1,77 @@
+<section class="login home-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Novo Usuario</h2>
+    </div>
+
+    <form disabled="disable" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div
+        fxLayout="row wrap"
+        fxLayoutAlign="start center"
+        fxLayoutGap="10px"
+      >
+        <mat-card-title fxFlex="50" fxFlexOffset.xs="25" fxFlexOffset="40">Dados Pessoais</mat-card-title>
+
+        <mat-form-field class="midle-width" fxFlex="100">
+          <input matInput type="text" id="name" formControlName="name"
+                 placeholder="Nome Completo">
+        </mat-form-field>
+
+        <mat-form-field class="midle-width" fxFlex.xs="100" fxFlexOffset.xs="0" fxFlexOffset="10" fxFlex="40">
+          <mat-select placeholder="Informe o Sexo" formControlName="gender" id="gender">
+            <mat-option *ngFor="let gender of genders$ | async" [value]="gender">{{ gender?.description }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="midle-width" fxFlex.xs="100" fxFlex="50" fxFlexOffset.xs="0" fxFlexOffset="10"
+                        fxFlex="40">
+          <input mask="00/00/0000" matInput type="text"
+                 id="dateOfBirth" formControlName="dateOfBirth"
+                 placeholder="Dia/Mes/Ano">
+        </mat-form-field>
+
+        <mat-form-field class="midle-width" fxFlex.xs="100" fxFlexOffset.xs="0" fxFlexOffset="10" fxFlex="40">
+          <mat-select placeholder="Informe a cidade" formControlName="city" id="city">
+            <mat-option *ngFor="let city of cities$ | async" (onSelectionChange)="onCityChose(city)" [value]="city">
+              {{ city?.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="midle-width" fxFlex.xs="100" fxFlexOffset.xs="0" fxFlexOffset="10" fxFlex="40">
+          <mat-select placeholder="Informe o bairro" formControlName="neighborhood" id="neighborhood">
+            <mat-option *ngFor="let neighborhood of neighborhoods " [value]="neighborhood">
+              {{ neighborhood?.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div fxLayout="row wrap"
+           fxLayoutAlign="start center"
+           fxLayoutGap="10px">
+        <mat-card-title fxFlex="50" fxFlexOffset.xs="25" fxFlexOffset="40">Dados de Acesso</mat-card-title>
+
+        <mat-form-field class="midle-width" fxFlex="100">
+          <input matInput type="email" id="email" formControlName="email"
+                 placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field class="midle-width"  fxFlex.xs="100" fxFlex="40">
+          <input matInput type="password" formControlName="password" id="password"
+                 placeholder="Senha">
+        </mat-form-field>
+
+        <mat-form-field class="midle-width"  fxFlex.xs="100" fxFlexOffset="20" fxFlex="40">
+          <input matInput type="password" formControlName="confirmPassword" id="confirmPassword"
+                 placeholder="Confirme a senha">
+        </mat-form-field>
+
+
+      </div>
+      <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+    </form>
+  </div>
+</section>

@@ -4,7 +4,6 @@ import {Component} from '@angular/core';
   selector: 'utfpr-root',
   template: `
     <utfpr-navbar></utfpr-navbar>
-    <utfpr-footer></utfpr-footer>
   `,
   styleUrls: ['./app.component.scss']
 })

@@ -1,0 +1,149 @@
+{
+  "genders": [
+    {
+      "id": 1,
+      "description": "Male",
+      "initial": "M"
+    },
+    {
+      "id": 2,
+      "description": "Female",
+      "initial": "F"
+    }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "name": "Guarapuava",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        },
+        {
+          "id": 2,
+          "name": "Boqueirao"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Foz do Iguaçu",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        },
+        {
+          "id": 2,
+          "name": "Morumbi"
+        },
+        {
+          "id": 3,
+          "name": "Morumbi 2"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Curitiba",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cascavel",
+      "neighborhoods": [
+        {
+          "id": 1,
+          "name": "Centro"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "name": "lucas",
+      "email": "lucas@gmail.com",
+      "password": "123456",
+      "id": 1,
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "createdAt": "asdasd",
+      "updatedAt": "",
+      "dateOfBirth": "",
+      "role": {
+        "id": 1,
+        "name": "ADMIN"
+      },
+      "address": {
+        "id": 1,
+        "createdAt": "",
+        "updatedAt": "",
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        },
+        "street": "rua a",
+        "number": 123
+      }
+    },
+    {
+      "name": "lasda",
+      "email": "asdad@ad.com",
+      "password": "123",
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "dateOfBirth": "10081996",
+      "address": {
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        }
+      },
+      "id": 2
+    },
+    {
+      "name": "SARTORI",
+      "email": "asdad@ad.com",
+      "password": "123",
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "dateOfBirth": "10081996",
+      "address": {
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        }
+      },
+      "id": 3
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "USER"
+    },
+    {
+      "id": 3,
+      "name": "MANAGER"
+    }
+  ]
+}

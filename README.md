@@ -7,10 +7,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 + Angular-cli >= 6.1.x
 + Typescript >= 3.0.3
 + Node latest version
++ Json-server
 
 ## first steps
 
-+ Run `npm i` or `npm install`
++ Run `npm i -g json-server`
++ Run `npm i` or `npm install`. Navigate to `http://localhost:9000` to see fake api restful 
++ Run `json-server --watch db.json --port 9000`
 + Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
@@ -72,6 +75,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 + [Angular Material](https://material.angular.io/)
 + [Masks](https://www.npmjs.com/package/ngx-mask)
 + [Validation](https://www.npmjs.com/package/ng2-validation)
++ [Flex Layout](https://github.com/angular/flex-layout)
+
+### Custom colors
+
++ [Material Design Palette Generator](http://mcg.mbitson.com)
 
 ## How to use components
 
@@ -101,6 +109,5 @@ inside your component Typescript
 
 inside `result` you can take result from the user
 
-### Custom colors
 
-+ [Material Design Palette Generator](http://mcg.mbitson.com)
+
