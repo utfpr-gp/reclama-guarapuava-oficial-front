@@ -1,12 +1,12 @@
 {
   "genders": [
     {
-      "id": "1",
+      "id": 1,
       "description": "Male",
       "initial": "M"
     },
     {
-      "id": "2",
+      "id": 2,
       "description": "Female",
       "initial": "F"
     }
@@ -63,6 +63,37 @@
           "name": "Centro"
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "name": "lucas",
+      "email": "lucas@gmail.com",
+      "password": "123456",
+      "id": 1,
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "createdAt": "asdasd",
+      "updatedAt": "",
+      "dateOfBirth": "",
+      "role": {
+        "id": 1,
+        "name": "ADMIN"
+      },
+      "address": {
+        "id": 1,
+        "createdAt": "",
+        "updatedAt": "",
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        },
+        "street": "rua a",
+        "number": 123
+      }
     }
   ]
 }

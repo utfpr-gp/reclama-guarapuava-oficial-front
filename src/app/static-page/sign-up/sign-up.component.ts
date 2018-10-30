@@ -33,12 +33,15 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.signIn(this.mountModel());
+      this.authService.signUp(this.mountModel());
     }
   }
 
   onCityChose(city) {
-    this.neighborhoods = city.neighborhoods;
+    this.neighborhoods = [];
+    city.neighborhoods.forEach(value => {
+      this.neighborhoods.push(value);
+    });
   }
 
   private resetForm(): void {
@@ -53,11 +56,10 @@ export class SignUpComponent implements OnInit {
     model.password = this.form.value.password;
     model.email = this.form.value.email;
     model.address.neighborhood = this.form.value.neighborhood;
-    return new User();
+    return model;
   }
 
   private buildForm(): void {
-    const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     const pwd = new FormControl('', Validators.required);
     const certainPassword = new FormControl('', [
       CustomValidators.equalTo(pwd),
@@ -74,8 +76,7 @@ export class SignUpComponent implements OnInit {
       ]],
       gender: [null, Validators.required],
       dateOfBirth: [null, [
-        Validators.required,
-        CustomValidators.maxDate(yesterday)
+        Validators.required
       ]],
       password: pwd,
       confirmPassword: certainPassword,

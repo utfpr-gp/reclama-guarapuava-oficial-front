@@ -3,6 +3,7 @@ import {User} from '../../model/user';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {DataService} from './data.service';
+import {RouteApi} from '../../shared/util/route-api';
 
 @Injectable()
 export class AuthService {
@@ -24,15 +25,15 @@ export class AuthService {
       this.dataService.setROLE('USER');
       this.dataService.setTOKEN('asdad');
     }
-   // return this.http.post<User>('', JSON.stringify(credentials)).pipe();
+    // return this.http.post<User>('', JSON.stringify(credentials)).pipe();
   }
 
   signOut() {
     this.dataService.clear();
   }
 
-  signUp(user: User) {
-    return this.http.post<User>('', JSON.stringify(user)).pipe();
+  signUp(user: User): Observable<User> {
+    return this.http.post<User>(RouteApi.USERS, JSON.stringify(user)).pipe();
   }
 
   refreshToken(credentials: User): Observable<User> {
