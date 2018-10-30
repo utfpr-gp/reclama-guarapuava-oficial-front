@@ -6,6 +6,7 @@ import {GenderService} from '../../core/data-service/gender.service';
 import {CustomValidators} from 'ng2-validation';
 import {CityService} from '../../core/data-service/city.service';
 import {Neighborhood} from '../../model/neighborhood';
+import {Address} from '../../model/address';
 
 @Component({
   selector: 'utfpr-sign-up',
@@ -33,7 +34,9 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      this.authService.signUp(this.mountModel());
+      this.authService.signUp(this.mountModel()).subscribe(res => {
+        JSON.stringify(res, null, 3);
+      });
     }
   }
 
@@ -55,6 +58,8 @@ export class SignUpComponent implements OnInit {
     model.dateOfBirth = this.form.value.dateOfBirth;
     model.password = this.form.value.password;
     model.email = this.form.value.email;
+    model.address = new Address();
+    model.address.neighborhood = new Neighborhood();
     model.address.neighborhood = this.form.value.neighborhood;
     return model;
   }

@@ -12,20 +12,8 @@ export class AuthService {
               private dataService: DataService) {
   }
 
-  signIn(credentials: User) {
-    if (credentials.name === 'admin') {
-      this.dataService.setROLE('ADMIN');
-      this.dataService.setTOKEN('asdad');
-    }
-    if (credentials.name === 'manager') {
-      this.dataService.setROLE('MANAGER');
-      this.dataService.setTOKEN('asdad');
-    }
-    if (credentials.name === 'user') {
-      this.dataService.setROLE('USER');
-      this.dataService.setTOKEN('asdad');
-    }
-    // return this.http.post<User>('', JSON.stringify(credentials)).pipe();
+  signIn(credentials: User): Observable<User> {
+    return this.http.get<User>(`${RouteApi.USERS}?email=${credentials.email}&password=${credentials.password}`).pipe();
   }
 
   signOut() {

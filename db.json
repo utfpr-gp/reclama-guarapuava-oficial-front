@@ -94,6 +94,56 @@
         "street": "rua a",
         "number": 123
       }
+    },
+    {
+      "name": "lasda",
+      "email": "asdad@ad.com",
+      "password": "123",
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "dateOfBirth": "10081996",
+      "address": {
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        }
+      },
+      "id": 2
+    },
+    {
+      "name": "SARTORI",
+      "email": "asdad@ad.com",
+      "password": "123",
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "dateOfBirth": "10081996",
+      "address": {
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        }
+      },
+      "id": 3
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "USER"
+    },
+    {
+      "id": 3,
+      "name": "MANAGER"
     }
   ]
 }
