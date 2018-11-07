@@ -11,6 +11,30 @@
       "initial": "F"
     }
   ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "rua zuada"
+    },
+    {
+      "name": "TA TUDO QUEBRADO",
+      "id": 2
+    },
+    {
+      "name": "asdasd",
+      "id": 3
+    },
+    {
+      "name": "oi eu sou o goku",
+      "id": 4
+    }
+  ],
+  "neighborhoods": [
+    {
+      "id": 1,
+      "name": "Centro"
+    }
+  ],
   "cities": [
     {
       "id": 1,

@@ -1,0 +1,22 @@
+<div>
+  <form disabled="disable" [formGroup]="form">
+
+    <div
+      fxLayout="row wrap"
+      fxLayoutAlign="start center"
+      fxLayoutGap="10px"
+    >
+      <mat-card-title fxFlex="50" fxFlexOffset.xs="25" fxFlexOffset="40">Dados Pessoais</mat-card-title>
+
+      <mat-form-field class="midle-width" fxFlex="100">
+        <input matInput type="text" id="name" formControlName="name"
+               placeholder="Nome Completo">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onSave()" type="submit">Cadastrar</button>
+    </div>
+  </form>
+</div>
+
+<div *ngFor="let category of categories">
+  <h1>{{category.name}}</h1>
+</div>

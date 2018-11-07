@@ -6,6 +6,7 @@ import {SharedModule} from '../shared/shared.module';
 import {GenderService} from './data-service/gender.service';
 import {CityService} from './data-service/city.service';
 import {NeighborhoodService} from './data-service/neighborhood.service';
+import {CategoryService} from './data-service/category.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {NeighborhoodService} from './data-service/neighborhood.service';
     GenderService,
     CityService,
     NeighborhoodService,
+    CategoryService,
     {provide: ErrorHandler, useClass: ErrorhandlerInterceptor},
   ]
 })

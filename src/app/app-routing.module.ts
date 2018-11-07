@@ -7,6 +7,7 @@ import {SignUpComponent} from './static-page/sign-up/sign-up.component';
 import {SignOutComponent} from './static-page/sign-out/sign-out.component';
 import {AuthManagerGuard} from './auth/guard/auth.manager.guard';
 import {AuthUserGuard} from './auth/guard/auth.user.guard';
+import {UserModule} from './user/user.module';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

@@ -7,8 +7,8 @@ export abstract class AbstractService<T extends AbstractEntity> {
   protected constructor(private http: HttpClient, private url: string) {
   }
 
-  all(): Observable<T> {
-    return this.http.get<T>(this.url).pipe();
+  all(): Observable<T[]> {
+    return this.http.get<T[]>(this.url).pipe();
   }
 
   create(model: T): Observable<T> {
