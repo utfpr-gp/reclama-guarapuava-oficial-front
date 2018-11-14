@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterCategoryComponent } from './register-category/register-category.component';
 import { DashComponent } from './dash/dash.component';
 import { RegisterNeighborhoodComponent } from './register-neighborhood/register-neighborhood.component';
+import { RegisterProblemComponent } from './register-problem/register-problem.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { RegisterNeighborhoodComponent } from './register-neighborhood/register-
     HomeComponent,
     RegisterCategoryComponent,
     DashComponent,
-    RegisterNeighborhoodComponent
+    RegisterNeighborhoodComponent,
+    RegisterProblemComponent
   ]
 })
 export class AdminModule { }
