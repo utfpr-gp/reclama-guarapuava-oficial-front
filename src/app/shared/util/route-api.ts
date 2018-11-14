@@ -7,6 +7,6 @@ export class RouteApi {
   static LVL_ACCESS = environment.apiURL + 'users-roles/';
   static GENDERS = environment.apiURL + 'genders/';
   static CITIES = environment.apiURL + 'cities/';
-  static NEIGHBORHOOD = environment.apiURL + 'neighborhood/';
+  static NEIGHBORHOOD = environment.apiURL + 'neighborhoods/';
   static CATEGORIES = environment.apiURL + 'categories/';
 }

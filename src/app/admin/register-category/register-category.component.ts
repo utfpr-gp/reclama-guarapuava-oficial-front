@@ -32,7 +32,6 @@ export class RegisterCategoryComponent implements OnInit {
     if (this.form.valid) {
       this.categoryService.create(this.mountCategory())
         .subscribe(res => {
-          alert('deu bao');
           this.categories.push(res);
         }, error1 => this.openDialog('deu ruim', JSON.stringify(error1), null));
     }
