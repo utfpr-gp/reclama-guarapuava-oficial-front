@@ -6,6 +6,7 @@ import {SharedModule} from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { RegisterCategoryComponent } from './register-category/register-category.component';
 import { DashComponent } from './dash/dash.component';
+import { RegisterNeighborhoodComponent } from './register-neighborhood/register-neighborhood.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { DashComponent } from './dash/dash.component';
   declarations: [
     HomeComponent,
     RegisterCategoryComponent,
-    DashComponent
+    DashComponent,
+    RegisterNeighborhoodComponent
   ]
 })
 export class AdminModule { }
