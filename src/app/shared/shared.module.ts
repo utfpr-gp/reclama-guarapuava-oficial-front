@@ -20,6 +20,7 @@ import {
   MatSidenavModule,
   MatSortModule,
   MatToolbarModule,
+  MatTreeModule,
   ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import {NgxMaskModule} from 'ngx-mask';
@@ -28,6 +29,7 @@ import {DialogComponent} from './component/dialog/dialog.component';
 import {CamelCasePipe} from './pipe/camel-case.pipe';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {DashboardComponent} from './component/dashboard/dashboard.component';
+import {TreeComponent} from './component/tree/tree.component';
 
 const NG_MODULES = [
   CommonModule,
@@ -56,10 +58,20 @@ const MATERIAL_MODULES = [
   MatSelectModule,
   MatSortModule,
   MatToolbarModule,
+  MatTreeModule,
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule,
+  LayoutModule,
 ];
 
 const COMPONENTS = [
-  DashboardComponent
+  DashboardComponent,
+  TreeComponent,
+  DashboardComponent,
+  DialogComponent,
 ];
 
 @NgModule({
@@ -68,18 +80,10 @@ const COMPONENTS = [
     MISC_MODULES,
     MATERIAL_MODULES,
     NgxMaskModule.forRoot({}),
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule
   ],
   declarations: [
-    DialogComponent,
     CamelCasePipe,
-    DashboardComponent,
-    COMPONENTS
+    COMPONENTS,
   ],
   exports: [
     NG_MODULES,

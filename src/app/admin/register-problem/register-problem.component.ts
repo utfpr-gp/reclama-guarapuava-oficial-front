@@ -29,7 +29,7 @@ export class RegisterProblemComponent implements OnInit {
     this.problemService.all().subscribe(res => this.problems = res);
   }
 
-  onSubmit() {
+  onSave() {
     if (this.form.valid) {
       this.problemService.create(this.mountProblem()).subscribe(res => {
         this.openDialog('Sucesso', 'Problema adicionado', 'ok');

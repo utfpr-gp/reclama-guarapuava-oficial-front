@@ -1,22 +1,37 @@
-<div>
-  <form disabled="disable" [formGroup]="form">
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap">
+  <div fxFlex="50" fxLayout="row wrap" fxLayoutAlign="start center">
+    <form disabled="disable" [formGroup]="form">
+      <div>
+        <mat-card-title fxFlex="100">Adicionar Categoria</mat-card-title>
+        <mat-form-field class="midle-width" fxFlex="100">
+          <input matInput type="text" id="name" formControlName="name"
+                 placeholder="nome da categoria">
+        </mat-form-field>
+        <button *ngIf="!isUpdating; else update" mat-raised-button color="primary" (click)="onSave()" type="submit">
+          <mat-icon>done</mat-icon>
+        </button>
 
-    <div
-      fxLayout="row wrap"
-      fxLayoutAlign="start center"
-      fxLayoutGap="10px"
-    >
-      <mat-card-title fxFlex="50" fxFlexOffset.xs="25" fxFlexOffset="40">Adicionar Categoria de Problema</mat-card-title>
+        <ng-template #update>
+          <button mat-raised-button color="primary" (click)="onUpdate()" type="submit">Atualizar</button>
+          <button mat-raised-button color="warn" (click)="onCancelUpdate()" type="submit">Cancelar</button>
+        </ng-template>
+      </div>
+    </form>
+  </div>
+  <div fxFlex="50" fxLayout="row wrap" fxLayoutAlign="start center">
+    <div *ngFor="let category of categories" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start center">
+      <div fxFlex="50">
+        <h1>{{category.name}}</h1>
+      </div>
+      <div class="buttons-size" fxFlex="50">
+        <button mat-raised-button color="warn" (click)="onRemove(category)" type="submit">
+          <mat-icon>clear</mat-icon>
+        </button>
 
-      <mat-form-field class="midle-width" fxFlex="100">
-        <input matInput type="text" id="name" formControlName="name"
-               placeholder="Nome Completo">
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="onSave()" type="submit">Cadastrar</button>
+        <button mat-raised-button color="warn" (click)="onEdit(category)" type="submit">
+          <mat-icon>create</mat-icon>
+        </button>
+      </div>
     </div>
-  </form>
-</div>
-
-<div *ngFor="let category of categories">
-  <h1>{{category.name}}</h1>
+  </div>
 </div>

@@ -34,23 +34,17 @@ export class RegisterNeighborhoodComponent implements OnInit {
 
   onSave(): void {
     if (this.form.valid) {
-      if (!this.isUpdating) {
-        this.neighborhoodService.create(this.mountNeighborhood()).subscribe(res => {
-          this.neighborhoods.push(res);
-          this.openDialog('Sucesso', 'Bairro cadastrado com sucesso!', 'ok');
-          this.resetForm();
-        });
-      } else {
-        this.neighborhoodService.edit(this.mountNeighborhood()).subscribe(success => {
-          this.neighborhoodService.all().subscribe(res => this.neighborhoods = res);
-        });
-      }
+      this.neighborhoodService.create(this.mountNeighborhood()).subscribe(res => {
+        this.neighborhoods.push(res);
+        this.openDialog('Sucesso', 'Bairro cadastrado com sucesso!', 'ok');
+        this.resetForm();
+      });
     }
   }
 
   onRemove(neighborhood: Neighborhood): void {
     const index: number = this.neighborhoods.indexOf(neighborhood);
-    this.neighborhoodService.destroy(neighborhood).subscribe(res => {
+    this.neighborhoodService.destroy(neighborhood).subscribe(() => {
       this.openDialog('Sucesso', 'Bairro Removido com sucesso!', 'ok');
       if (index !== -1) {
         this.neighborhoods.splice(index, 1);
@@ -58,7 +52,15 @@ export class RegisterNeighborhoodComponent implements OnInit {
     });
   }
 
-  onUpdate(neighborhood: Neighborhood): void {
+  onUpdate() {
+    if (this.form.valid) {
+      this.neighborhoodService.edit(this.mountNeighborhood()).subscribe(() => {
+        this.neighborhoodService.all().subscribe(res => this.neighborhoods = res);
+      });
+    }
+  }
+
+  onEdit(neighborhood: Neighborhood): void {
     this.form.patchValue({
       id: neighborhood.id,
       name: neighborhood.name

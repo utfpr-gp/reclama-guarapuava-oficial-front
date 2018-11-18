@@ -14,7 +14,7 @@
   "categories": [
     {
       "id": 1,
-      "name": "rua zuada"
+      "name": "rua zuadas"
     },
     {
       "name": "TA TUDO QUEBRADO",
@@ -190,6 +190,10 @@
     {
       "id": 5,
       "name": "asdadaasdasdad"
+    },
+    {
+      "id": 6,
+      "name": "asd"
     }
   ]
 }

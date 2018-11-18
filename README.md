@@ -76,6 +76,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 + [Masks](https://www.npmjs.com/package/ngx-mask)
 + [Validation](https://www.npmjs.com/package/ng2-validation)
 + [Flex Layout](https://github.com/angular/flex-layout)
++ [Ngx Charts](https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-vertical)
++ [Icons](https://material.io/tools/icons/)
 
 ### Custom colors
 

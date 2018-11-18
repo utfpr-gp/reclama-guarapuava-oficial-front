@@ -8,11 +8,33 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item routerLinkActive="active" routerLink="manager">Manager</a>
-      <a mat-list-item routerLinkActive="active" routerLink="admin">Admin</a>
-      <a mat-list-item routerLinkActive="active" routerLink="user">User</a>
-      <a mat-list-item routerLinkActive="active" routerLink="auth/sign-in" >Entrar</a>
+      <div *ngIf="isManager()">
+        <a mat-list-item routerLinkActive="active" routerLink="manager">Manager</a>
+        <mat-list *ngFor="let route of managerRoutes">
+          <mat-list-item routerLinkActive="active" [routerLink]="route.url">{{route.title}}</mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+      <div *ngIf="isAdmin()">
+        <a mat-list-item routerLinkActive="active" routerLink="admin">Admin</a>
+        <mat-list *ngFor="let route of adminRoutes">
+          <mat-list-item routerLinkActive="active" [routerLink]="route.url">{{route.title}}</mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+      <div *ngIf="isUser()">
+        <a mat-list-item routerLinkActive="active" routerLink="user">User</a>
+        <mat-list *ngFor="let route of userRoutes">
+          <mat-list-item routerLinkActive="active" [routerLink]="route.url">{{route.title}}</mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+      <div *ngIf="checkLogin(); else signIn">
+        <a mat-list-item (click)="signOut()">Sair</a>
+      </div>
+      <ng-template #signIn>
+        <a mat-list-item routerLinkActive="active" routerLink="auth/sign-in">Entrar</a>
+      </ng-template>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -30,7 +52,8 @@
 
     <router-outlet></router-outlet>
 
-    <utfpr-footer></utfpr-footer>
+
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+<utfpr-footer></utfpr-footer>

@@ -12,7 +12,6 @@ import {AppLoaderModule} from './layout/app-loader/app-loader.module';
 import {AuthModule} from './auth/auth.module';
 import {HomeComponent} from './static-page/home/home.component';
 import {SignInComponent} from './static-page/sign-in/sign-in.component';
-import {SignOutComponent} from './static-page/sign-out/sign-out.component';
 import {SignUpComponent} from './static-page/sign-up/sign-up.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import {SignUpComponent} from './static-page/sign-up/sign-up.component';
     FooterComponent,
     HomeComponent,
     SignInComponent,
-    SignOutComponent,
     SignUpComponent,
   ],
   imports: [
