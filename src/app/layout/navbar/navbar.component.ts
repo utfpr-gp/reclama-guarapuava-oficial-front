@@ -14,13 +14,19 @@ import {Router} from '@angular/router';
 export class NavbarComponent {
 
   adminRoutes: UserRoutes[] = [
+    {title: 'Home', url: 'admin/dash'},
     {title: 'Categorias', url: 'admin/category'},
     {title: 'Problemas', url: 'admin/problems'},
     {title: 'Bairros', url: 'admin/neighborhood'}
   ];
 
-  managerRoutes: UserRoutes[] = [];
-  userRoutes: UserRoutes[] = [];
+  managerRoutes: UserRoutes[] = [
+    {title: 'Home', url: 'manager/dash'},
+  ];
+  userRoutes: UserRoutes[] = [
+    {title: 'Home', url: 'user/dash'},
+    {title: 'Ocorrencias', url: 'user/occurrences'}
+  ];
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)

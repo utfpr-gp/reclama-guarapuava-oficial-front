@@ -1,0 +1,21 @@
+<mat-card class="example-card" *ngIf="occurrence !=null">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{occurrence.title }}</mat-card-title>
+    <mat-card-subtitle>{{occurrence.problem.name }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      Bairro: {{occurrence.address.neighborhood.name }}
+      Rua: {{occurrence.address.street}} - {{occurrence.address.number }}
+      Status: {{occurrence.status.toString() }}
+
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>{{occurrence.like }}-LIKE</button>
+    <button mat-button>{{occurrence.views }}-VIEWS</button>
+    <button mat-button>{{occurrence.unlike }}-UNLIKE</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,22 @@
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="nowrap">
+  <div fxFlex="50" fxLayout="row wrap" fxLayoutAlign="start center">
+    <mat-card *ngFor="let occurrence of occurrences$ | async" class="example-card">
+      <mat-card-header [routerLink]="['/user/occurrences/', occurrence.id]">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{occurrence.title}}</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header>
+      <img [routerLink]="['/user/occurrences/', occurrence.id]" mat-card-image
+           src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+           alt="Photo of a Shiba Inu">
+      <mat-card-actions>
+        <button (click)="addLike(occurrence)" mat-button>{{occurrence.like}}LIKE</button>
+        <button mat-button>{{occurrence.views}}Views</button>
+        <button (click)="addUnlike(occurrence)" mat-button>{{occurrence.unlike}} UNLIKE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div fxFlex="50" fxLayout="row wrap" fxLayoutAlign="start center">
+    <router-outlet></router-outlet>
+  </div>
+</div>

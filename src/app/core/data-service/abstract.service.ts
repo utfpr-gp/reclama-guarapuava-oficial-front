@@ -15,8 +15,11 @@ export abstract class AbstractService<T extends AbstractEntity> {
     return this.http.post<T>(this.url, JSON.stringify(model)).pipe();
   }
 
+  show(id: any): Observable<T> {
+    return this.http.get<T>(this.url + id).pipe();
+  }
+
   edit(model: T): Observable<T> {
-    console.log(JSON.stringify(model,null,3))
     return this.http.put<T>(this.url + model.id, JSON.stringify(model)).pipe();
   }
 

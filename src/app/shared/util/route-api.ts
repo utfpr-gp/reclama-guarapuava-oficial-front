@@ -10,4 +10,5 @@ export class RouteApi {
   static NEIGHBORHOOD = environment.apiURL + 'neighborhoods/';
   static CATEGORIES = environment.apiURL + 'categories/';
   static PROBLEMS = environment.apiURL + 'problems/';
+  static OCCURRENCES = environment.apiURL + 'occurrences/';
 }

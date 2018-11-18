@@ -9,21 +9,18 @@
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
       <div *ngIf="isManager()">
-        <a mat-list-item routerLinkActive="active" routerLink="manager">Manager</a>
         <mat-list *ngFor="let route of managerRoutes">
           <mat-list-item routerLinkActive="active" [routerLink]="route.url">{{route.title}}</mat-list-item>
           <mat-divider></mat-divider>
         </mat-list>
       </div>
       <div *ngIf="isAdmin()">
-        <a mat-list-item routerLinkActive="active" routerLink="admin">Admin</a>
         <mat-list *ngFor="let route of adminRoutes">
           <mat-list-item routerLinkActive="active" [routerLink]="route.url">{{route.title}}</mat-list-item>
           <mat-divider></mat-divider>
         </mat-list>
       </div>
       <div *ngIf="isUser()">
-        <a mat-list-item routerLinkActive="active" routerLink="user">User</a>
         <mat-list *ngFor="let route of userRoutes">
           <mat-list-item routerLinkActive="active" [routerLink]="route.url">{{route.title}}</mat-list-item>
           <mat-divider></mat-divider>

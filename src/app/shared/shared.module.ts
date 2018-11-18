@@ -18,6 +18,7 @@ import {
   MatPaginatorModule,
   MatSelectModule,
   MatSidenavModule,
+  MatSnackBarModule,
   MatSortModule,
   MatToolbarModule,
   MatTreeModule,
@@ -65,6 +66,7 @@ const MATERIAL_MODULES = [
   MatIconModule,
   MatButtonModule,
   LayoutModule,
+  MatSnackBarModule,
 ];
 
 const COMPONENTS = [
