@@ -8,6 +8,7 @@ import { RegisterCategoryComponent } from './register-category/register-category
 import { DashComponent } from './dash/dash.component';
 import { RegisterNeighborhoodComponent } from './register-neighborhood/register-neighborhood.component';
 import { RegisterProblemComponent } from './register-problem/register-problem.component';
+import { RegisterOccurrenceComponent } from './register-occurrence/register-occurrence.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { RegisterProblemComponent } from './register-problem/register-problem.co
     RegisterCategoryComponent,
     DashComponent,
     RegisterNeighborhoodComponent,
-    RegisterProblemComponent
+    RegisterProblemComponent,
+    RegisterOccurrenceComponent
   ]
 })
 export class AdminModule { }

@@ -5,6 +5,7 @@ import {RegisterCategoryComponent} from './register-category/register-category.c
 import {DashComponent} from './dash/dash.component';
 import {RegisterNeighborhoodComponent} from './register-neighborhood/register-neighborhood.component';
 import {RegisterProblemComponent} from './register-problem/register-problem.component';
+import {RegisterOccurrenceComponent} from './register-occurrence/register-occurrence.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
       {path: 'dash', component: DashComponent},
       {path: 'category', component: RegisterCategoryComponent},
       {path: 'neighborhood', component: RegisterNeighborhoodComponent},
-      {path: 'problems', component: RegisterProblemComponent}
+      {path: 'problems', component: RegisterProblemComponent},
+      {path: 'occurrences', component: RegisterOccurrenceComponent}
     ]
   }
 ];

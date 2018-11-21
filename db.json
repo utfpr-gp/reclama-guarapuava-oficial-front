@@ -14,7 +14,13 @@
   "categories": [
     {
       "id": 1,
-      "name": "rua zuada"
+      "name": "rua zuada",
+      "problems": [
+        {
+          "id": 1,
+          "name": "ta muito ruim"
+        }
+      ]
     },
     {
       "name": "TA TUDO QUEBRADO",
@@ -170,6 +176,28 @@
         }
       },
       "id": 3
+    },
+    {
+      "name": "Guilherme RC",
+      "email": "guilherme.rcarneiro@gmail.com",
+      "password": "abc1234",
+      "gender": {
+        "id": 1,
+        "description": "Male",
+        "initial": "M"
+      },
+      "dateOfBirth": "30051996",
+      "role": {
+        "id": 1,
+        "name": "ADMIN"
+      },
+      "address": {
+        "neighborhood": {
+          "id": 1,
+          "name": "Centro"
+        }
+      },
+      "id": 4
     }
   ],
   "roles": [
@@ -190,6 +218,26 @@
     {
       "id": 5,
       "name": "asdadaasdasdad"
+    }
+  ],
+  "occurrences": [
+    {
+      "description": "Buraco furou pneu",
+      "category": {
+        "id": 1,
+        "name": "rua zuada",
+        "problems": [
+          {
+            "id": 1,
+            "name": "ta muito ruim"
+          }
+        ]
+      },
+      "problem": {
+        "id": 1,
+        "name": "ta muito ruim"
+      },
+      "id": 1
     }
   ]
 }

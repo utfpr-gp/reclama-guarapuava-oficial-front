@@ -8,6 +8,7 @@ import {CityService} from './data-service/city.service';
 import {NeighborhoodService} from './data-service/neighborhood.service';
 import {CategoryService} from './data-service/category.service';
 import {ProblemService} from './data-service/problem.service';
+import {OccurrenceService} from './data-service/occurrence.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import {ProblemService} from './data-service/problem.service';
     NeighborhoodService,
     CategoryService,
     ProblemService,
+    OccurrenceService,
     {provide: ErrorHandler, useClass: ErrorhandlerInterceptor},
   ]
 })
