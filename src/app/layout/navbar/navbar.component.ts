@@ -25,7 +25,8 @@ export class NavbarComponent {
   ];
   userRoutes: UserRoutes[] = [
     {title: 'Home', url: 'user/dash'},
-    {title: 'Ocorrencias', url: 'user/occurrences'}
+    {title: 'Ocorrencias', url: 'user/occurrences'},
+    {title: 'Perfil', url: 'user/profile'}
   ];
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

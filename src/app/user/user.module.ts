@@ -6,6 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {OccurrencesComponent} from './occurrences/occurrences.component';
 import {DashComponent} from './dash/dash.component';
 import {OccurrenceDetailComponent} from './occurrence-detail/occurrence-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {OccurrenceDetailComponent} from './occurrence-detail/occurrence-detail.c
     OccurrencesComponent,
     DashComponent,
     OccurrenceDetailComponent,
+    ProfileComponent,
   ]
 })
 export class UserModule {

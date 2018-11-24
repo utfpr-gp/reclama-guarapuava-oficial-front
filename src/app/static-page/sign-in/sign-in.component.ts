@@ -27,6 +27,7 @@ export class SignInComponent implements OnInit {
     if (this.form.valid) {
       this.authService.signIn(this.mountModel()).subscribe(res => {
         const user = res[0];
+        this.dataService.setEmail(user.email);
         if (user.role.name === 'ADMIN') {
           this.dataService.setROLE('ADMIN');
           this.dataService.setTOKEN('asdad');
