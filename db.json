@@ -197,8 +197,38 @@
     {
       "id": 1,
       "title": "TA TUDO CAGADO",
-      "like": 20,
-      "unlike": 5,
+      "like": [
+        {
+          "name": "lucas",
+          "email": "user@gmail.com",
+          "password": "123456",
+          "id": 2,
+          "gender": {
+            "id": 1,
+            "description": "Male",
+            "initial": "M"
+          },
+          "createdAt": "asdasd",
+          "updatedAt": "",
+          "dateOfBirth": "",
+          "role": {
+            "id": 2,
+            "name": "USER"
+          },
+          "address": {
+            "id": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "neighborhood": {
+              "id": 1,
+              "name": "Centro"
+            },
+            "street": "rua a",
+            "number": 123
+          }
+        }
+      ],
+      "unlike": [],
       "views": 41,
       "user": {
         "name": "lucas",
@@ -249,8 +279,38 @@
     {
       "id": 2,
       "title": "TA TUDO RISCADO",
-      "like": 10,
-      "unlike": 3,
+      "like": [],
+      "unlike": [
+        {
+          "name": "lucas",
+          "email": "user@gmail.com",
+          "password": "123456",
+          "id": 2,
+          "gender": {
+            "id": 1,
+            "description": "Male",
+            "initial": "M"
+          },
+          "createdAt": "asdasd",
+          "updatedAt": "",
+          "dateOfBirth": "",
+          "role": {
+            "id": 2,
+            "name": "USER"
+          },
+          "address": {
+            "id": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "neighborhood": {
+              "id": 1,
+              "name": "Centro"
+            },
+            "street": "rua a",
+            "number": 123
+          }
+        }
+      ],
       "views": 12,
       "user": {
         "name": "lucas",

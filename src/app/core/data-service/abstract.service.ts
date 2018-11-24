@@ -4,7 +4,7 @@ import {AbstractEntity} from '../../model/abstract-entity';
 
 export abstract class AbstractService<T extends AbstractEntity> {
 
-  protected constructor(private http: HttpClient, private url: string) {
+  protected constructor(protected http: HttpClient, private url: string) {
   }
 
   all(): Observable<T[]> {

@@ -5,6 +5,7 @@ export class DataService {
 
   private _TOKEN = 'TOKEN';
   private _ROLE = 'ROLE';
+  private _EMAIL = 'e-mail';
 
   constructor() {
   }
@@ -29,5 +30,13 @@ export class DataService {
   clear(): boolean {
     localStorage.clear();
     return true;
+  }
+
+  setEmail(email: any) {
+    localStorage.setItem(this._EMAIL, email);
+  }
+
+  getEmail(): string {
+    return localStorage.getItem(this._EMAIL);
   }
 }
