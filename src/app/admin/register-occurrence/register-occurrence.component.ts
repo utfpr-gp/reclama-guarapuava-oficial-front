@@ -19,7 +19,7 @@ export class RegisterOccurrenceComponent implements OnInit {
   isUpdating = false;
 
   categories$;
-  problems: Problem[] = [];
+  problems$;
 
   constructor(private formBuilder: FormBuilder,
               private categoryService: CategoryService,
@@ -37,7 +37,7 @@ export class RegisterOccurrenceComponent implements OnInit {
     this.occurrenceService.all().subscribe(res => this.occurrences = res);
   }
 
-  onSubmit() {
+  onSave() {
     if (this.form.valid) {
       this.occurrenceService.create(this.mountOccurrence()).subscribe(res => {
         this.openDialog('Sucesso', 'Ocorrência adicionada', 'Ok');
@@ -45,6 +45,13 @@ export class RegisterOccurrenceComponent implements OnInit {
         this.occurrences.push(res);
       }, err => alert(JSON.stringify(err, null, 3)));
     }
+  }
+
+  onCancelUpdate() {
+    this.isUpdating = false;
+  }
+
+  onRemove(occurrence: Occurrence) {
   }
 
   onUpdate() {
@@ -67,11 +74,7 @@ export class RegisterOccurrenceComponent implements OnInit {
   }
 
   onCategoryChose(category) {
-    this.problems = [];
-    console.log(JSON.stringify(category,null,3))
-    category.problems.forEach(value => {
-      this.problems.push(value);
-    });
+   this.problems$ = this.categoryService.problems(category);
   }
 
   private resetForm() {

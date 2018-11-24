@@ -7,6 +7,7 @@ import {CustomValidators} from 'ng2-validation';
 import {CityService} from '../../core/data-service/city.service';
 import {Neighborhood} from '../../model/neighborhood';
 import {Address} from '../../model/address';
+import {City} from '../../model/city';
 
 @Component({
   selector: 'utfpr-sign-up',
@@ -18,7 +19,7 @@ export class SignUpComponent implements OnInit {
   form: FormGroup;
   genders$;
   cities$;
-  neighborhoods: Neighborhood[] = [];
+  neighborhoods$;
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
@@ -40,11 +41,9 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  onCityChose(city) {
-    this.neighborhoods = [];
-    city.neighborhoods.forEach(value => {
-      this.neighborhoods.push(value);
-    });
+  onCityChose(city: City) {
+    console.log(JSON.stringify(city, null, 3));
+    this.neighborhoods$ = this.cityService.neighborhoods(city);
   }
 
   private resetForm(): void {

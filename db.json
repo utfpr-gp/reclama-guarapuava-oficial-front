@@ -14,13 +14,7 @@
   "categories": [
     {
       "id": 1,
-      "name": "rua zuada",
-      "problems": [
-        {
-          "id": 1,
-          "name": "ta muito ruim"
-        }
-      ]
+      "name": "rua zuada"
     },
     {
       "name": "TA TUDO QUEBRADO",
@@ -37,78 +31,57 @@
   ],
   "neighborhoods": [
     {
-      "id": 5,
-      "name": "chapeu"
+      "id": 1,
+      "name": "Centro",
+      "cityId": 1
     },
     {
-      "name": "olaaa",
-      "id": 6
+      "id": 2,
+      "name": "Centro",
+      "cityId": 2
+    },
+    {
+      "id": 3,
+      "name": "Centro",
+      "cityId": 3
+    },
+    {
+      "id": 4,
+      "name": "Centro",
+      "cityId": 4
+    },
+    {
+      "id": 5,
+      "name": "Boqueirao",
+      "cityId": 1
+    },
+    {
+      "id": 6,
+      "name": "Morumbi",
+      "cityId": 2
     },
     {
       "id": 7,
-      "name": "asdolar"
-    },
-    {
-      "id": 8,
-      "name": "dcrftvgybhunjmk"
-    },
-    {
-      "id": 9,
-      "name": "eewer"
+      "name": "Morumbi 2",
+      "cityId": 2
     }
   ],
   "cities": [
     {
       "id": 1,
-      "name": "Guarapuava",
-      "neighborhoods": [
-        {
-          "id": 1,
-          "name": "Centro"
-        },
-        {
-          "id": 2,
-          "name": "Boqueirao"
-        }
-      ]
+      "name": "Guarapuava"
     },
     {
       "id": 2,
-      "name": "Foz do Iguaçu",
-      "neighborhoods": [
-        {
-          "id": 1,
-          "name": "Centro"
-        },
-        {
-          "id": 2,
-          "name": "Morumbi"
-        },
-        {
-          "id": 3,
-          "name": "Morumbi 2"
-        }
-      ]
+      "name": "Foz do Iguaçu"
     },
     {
       "id": 3,
-      "name": "Curitiba",
-      "neighborhoods": [
-        {
-          "id": 1,
-          "name": "Centro"
-        }
-      ]
+      "name": "Curitiba"
     },
     {
-      "id": 2,
-      "name": "Cascavel",
-      "neighborhoods": [
-        {
-          "id": 1,
-          "name": "Centro"
-        }
-      ]
+      "id": 4,
+      "name": "Cascavel"
     }
   ],
   "users": [
@@ -216,8 +189,37 @@
   ],
   "problems": [
     {
+      "id": 1,
+      "name": "problem 1",
+      "categoryId": 1
+    },{
+      "id": 2,
+      "name": "problem 2",
+      "categoryId": 2
+    },{
+      "id": 3,
+      "name": "problem 3",
+      "categoryId": 3
+    },{
+      "id": 4,
+      "name": "problem 4",
+      "categoryId": 4
+    },{
       "id": 5,
-      "name": "asdadaasdasdad"
+      "name": "problem 5",
+      "categoryId": 1
+    },{
+      "id": 6,
+      "name": "problem 6",
+      "categoryId": 2
+    },{
+      "id": 7,
+      "name": "problem 7",
+      "categoryId": 3
+    },{
+      "id": 8,
+      "name": "problem 8",
+      "categoryId": 4
     }
   ],
   "occurrences": [

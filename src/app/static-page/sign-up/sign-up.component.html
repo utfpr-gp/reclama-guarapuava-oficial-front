@@ -34,14 +34,14 @@
         <mat-form-field class="midle-width" fxFlex.xs="100" fxFlexOffset.xs="0" fxFlexOffset="10" fxFlex="40">
           <mat-select placeholder="Informe a cidade" formControlName="city" id="city">
             <mat-option *ngFor="let city of cities$ | async" (onSelectionChange)="onCityChose(city)" [value]="city">
-              {{ city?.name }}
+              {{ city.name }}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field class="midle-width" fxFlex.xs="100" fxFlexOffset.xs="0" fxFlexOffset="10" fxFlex="40">
           <mat-select placeholder="Informe o bairro" formControlName="neighborhood" id="neighborhood">
-            <mat-option *ngFor="let neighborhood of neighborhoods " [value]="neighborhood">
+            <mat-option *ngFor="let neighborhood of neighborhoods$ | async" [value]="neighborhood">
               {{ neighborhood?.name }}
             </mat-option>
           </mat-select>
