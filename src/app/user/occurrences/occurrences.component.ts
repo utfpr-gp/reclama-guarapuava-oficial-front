@@ -4,6 +4,7 @@ import {Occurrence} from '../../model/occurrence';
 import {MatSnackBar} from '@angular/material';
 import {UserService} from '../../core/data-service/user.service';
 import {DataService} from '../../auth/service/data.service';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'utfpr-occurrences',
@@ -13,6 +14,7 @@ import {DataService} from '../../auth/service/data.service';
 export class OccurrencesComponent implements OnInit {
 
   occurrences$;
+  private currentUser: User;
 
   constructor(private occurrenceService: OccurrenceService,
               private snackBar: MatSnackBar,
@@ -22,53 +24,52 @@ export class OccurrencesComponent implements OnInit {
 
   ngOnInit() {
     this.occurrences$ = this.occurrenceService.all();
+    this.userService.findByEmail(this.dataService.getEmail()).subscribe(res => {
+      this.currentUser = res[0];
+    });
   }
 
   addLike(occurrence: Occurrence) {
     const oc = this.mountOccurrence(occurrence);
-    this.userService.findByEmail(this.dataService.getEmail()).subscribe(res => {
-      oc.addLike(res[0]);
-      this.occurrenceService.edit(oc).subscribe(() => {
-        this.occurrences$ = this.occurrenceService.all();
-      }, () => {
-        this.openSnackBar('Ocorreu algum erro', 'Adicionar Like');
-      });
+    oc.addLike(this.currentUser);
+    this.occurrenceService.edit(oc).subscribe(() => {
+      this.occurrences$ = this.occurrenceService.all();
+    }, () => {
+      this.openSnackBar('Ocorreu algum erro', 'Adicionar Like');
     });
+  }
+
+  hasLiked(occurrence: Occurrence):boolean {
+    return this.mountOccurrence(occurrence).like.includes(this.currentUser)
   }
 
   removeLike(occurrence: Occurrence) {
     const oc = this.mountOccurrence(occurrence);
-    this.userService.findByEmail(this.dataService.getEmail()).subscribe(res => {
-      oc.removeLike(res);
-      this.occurrenceService.edit(oc).subscribe(() => {
-        this.occurrences$ = this.occurrenceService.all();
-      }, () => {
-        this.openSnackBar('Ocorreu algum erro', 'Remover Like');
-      });
+    oc.removeLike(this.currentUser);
+    this.occurrenceService.edit(oc).subscribe(() => {
+      this.occurrences$ = this.occurrenceService.all();
+    }, () => {
+      this.openSnackBar('Ocorreu algum erro', 'Remover Like');
     });
   }
 
   addUnlike(occurrence: Occurrence) {
     const oc = this.mountOccurrence(occurrence);
-    this.userService.findByEmail(this.dataService.getEmail()).subscribe(res => {
-      oc.addUnlike(res[0]);
-      this.occurrenceService.edit(oc).subscribe(() => {
-        this.occurrences$ = this.occurrenceService.all();
-      }, () => {
-        this.openSnackBar('Ocorreu algum erro', 'Adicionar UnLike');
-      });
+    oc.addUnlike(this.currentUser);
+    this.occurrenceService.edit(oc).subscribe(() => {
+      this.occurrences$ = this.occurrenceService.all();
+    }, () => {
+      this.openSnackBar('Ocorreu algum erro', 'Adicionar UnLike');
     });
   }
 
   removeUnlike(occurrence: Occurrence) {
     const oc = this.mountOccurrence(occurrence);
-    this.userService.findByEmail(this.dataService.getEmail()).subscribe(res => {
-      oc.removeUnlike(res);
-      this.occurrenceService.edit(oc).subscribe(() => {
-        this.occurrences$ = this.occurrenceService.all();
-      }, () => {
-        this.openSnackBar('Ocorreu algum erro', 'Remover UnLike');
-      });
+    oc.removeUnlike(this.currentUser);
+    this.occurrenceService.edit(oc).subscribe(() => {
+      this.occurrences$ = this.occurrenceService.all();
+    }, () => {
+      this.openSnackBar('Ocorreu algum erro', 'Remover UnLike');
     });
   }
 
