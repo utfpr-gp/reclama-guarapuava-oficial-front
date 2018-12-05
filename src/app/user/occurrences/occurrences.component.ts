@@ -39,8 +39,8 @@ export class OccurrencesComponent implements OnInit {
     });
   }
 
-  hasLiked(occurrence: Occurrence):boolean {
-    return this.mountOccurrence(occurrence).like.includes(this.currentUser)
+  hasLiked(occurrence: Occurrence): boolean {
+    return this.mountOccurrence(occurrence).likes.includes(this.currentUser);
   }
 
   removeLike(occurrence: Occurrence) {
@@ -80,6 +80,6 @@ export class OccurrencesComponent implements OnInit {
   }
 
   private mountOccurrence(occurrence: Occurrence) {
-    return new Occurrence(occurrence.id, occurrence.title, occurrence.like, occurrence.unlike, occurrence.views, occurrence.user, occurrence.status, occurrence.address, occurrence.problem, occurrence.createdAt, occurrence.updatedAt);
+    return new Occurrence(occurrence.id, occurrence.title, occurrence.likes, occurrence.unlikes, occurrence.views, occurrence.user, occurrence.comments, occurrence.status, occurrence.address, occurrence.problem, occurrence.createdAt, occurrence.updatedAt);
   }
 }

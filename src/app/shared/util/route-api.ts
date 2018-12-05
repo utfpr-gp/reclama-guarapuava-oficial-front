@@ -11,4 +11,5 @@ export class RouteApi {
   static CATEGORIES = environment.apiURL + 'categories/';
   static PROBLEMS = environment.apiURL + 'problems/';
   static OCCURRENCES = environment.apiURL + 'occurrences/';
+  static COMMENTS = environment.apiURL + 'comments/';
 }

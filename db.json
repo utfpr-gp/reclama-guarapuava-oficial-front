@@ -191,13 +191,17 @@
     {
       "id": 6,
       "name": "probrema"
+    },
+    {
+      "id": 7,
+      "name": "adassdasd"
     }
   ],
   "occurrences": [
     {
       "id": 1,
       "title": "TA TUDO CAGADO",
-      "like": [
+      "likes": [
         {
           "name": "lucas",
           "email": "user@gmail.com",
@@ -228,7 +232,7 @@
           }
         }
       ],
-      "unlike": [],
+      "unlikes": [],
       "views": 41,
       "user": {
         "name": "lucas",
@@ -259,6 +263,42 @@
           "number": 123
         }
       },
+      "comments": [
+        {
+          "comment": "eae",
+          "author": {
+            "name": "lucas",
+            "email": "user@gmail.com",
+            "password": "123456",
+            "id": 2,
+            "gender": {
+              "id": 1,
+              "description": "Male",
+              "initial": "M"
+            },
+            "createdAt": "asdasd",
+            "updatedAt": "",
+            "dateOfBirth": "",
+            "role": {
+              "id": 2,
+              "name": "USER"
+            },
+            "address": {
+              "id": 1,
+              "createdAt": "",
+              "updatedAt": "",
+              "neighborhood": {
+                "id": 1,
+                "name": "Centro"
+              },
+              "street": "rua a",
+              "number": 123
+            }
+          },
+          "likes": [],
+          "answers": []
+        }
+      ],
       "status": "URGENTE",
       "address": {
         "id": 1,
@@ -308,6 +348,42 @@
             "street": "rua a",
             "number": 123
           }
+        }
+      ],
+      "comments": [
+        {
+          "comment": "dasd",
+          "author": {
+            "name": "lucas",
+            "email": "user@gmail.com",
+            "password": "123456",
+            "id": 2,
+            "gender": {
+              "id": 1,
+              "description": "Male",
+              "initial": "M"
+            },
+            "createdAt": "asdasd",
+            "updatedAt": "",
+            "dateOfBirth": "",
+            "role": {
+              "id": 2,
+              "name": "USER"
+            },
+            "address": {
+              "id": 1,
+              "createdAt": "",
+              "updatedAt": "",
+              "neighborhood": {
+                "id": 1,
+                "name": "Centro"
+              },
+              "street": "rua a",
+              "number": 123
+            }
+          },
+          "likes": [],
+          "answers": []
         }
       ],
       "unlike": [],
@@ -361,6 +437,7 @@
     {
       "id": 3,
       "title": "TA TUDO QUEBRADO",
+      "comments": [],
       "like": [
         {
           "name": "lucas",

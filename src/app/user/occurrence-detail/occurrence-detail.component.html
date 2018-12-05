@@ -12,10 +12,23 @@
       Status: {{occurrence.status.toString() }}
 
     </p>
+    <div *ngIf="occurrence.comments != null">
+      <p *ngFor="let comment of occurrence.comments">
+        <button (click)="addLikeToComment(comment)" mat-button>{{comment.likes?.length }}-LIKE</button>
+        - {{comment.comment}} <strong>by:</strong>{{comment.author?.name}}
+        <button (click)="removeComment(comment)" *ngIf="comment?.author?.name == currentUser?.name">X</button>
+      </p>
+    </div>
+    <div [formGroup]="commentForm">
+      <mat-form-field (keyup.enter)="addComment()" class="midle-width" fxFlex="100">
+        <input matInput type="text" id="comment" formControlName="comment"
+               placeholder="comentario">
+      </mat-form-field>
+    </div>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="addLike(occurrence)" mat-button>{{occurrence.like.length }}-LIKE</button>
+    <button (click)="addLike(occurrence)" mat-button>{{occurrence.likes?.length }}-LIKE</button>
     <button mat-button>{{occurrence.views }}-VIEWS</button>
-    <button (click)="addUnlike(occurrence)" mat-button>{{occurrence.unlike.length }}-UNLIKE</button>
+    <button (click)="addUnlike(occurrence)" mat-button>{{occurrence.unlikes?.length }}-UNLIKE</button>
   </mat-card-actions>
 </mat-card>

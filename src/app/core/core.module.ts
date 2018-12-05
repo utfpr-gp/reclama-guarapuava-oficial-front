@@ -10,6 +10,7 @@ import {CategoryService} from './data-service/category.service';
 import {ProblemService} from './data-service/problem.service';
 import {OccurrenceService} from './data-service/occurrence.service';
 import {UserService} from './data-service/user.service';
+import {CommentService} from './data-service/comment.service';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import {UserService} from './data-service/user.service';
     ProblemService,
     UserService,
     OccurrenceService,
+    CommentService,
     {provide: ErrorHandler, useClass: ErrorhandlerInterceptor},
   ]
 })

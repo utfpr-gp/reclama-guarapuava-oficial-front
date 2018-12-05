@@ -10,11 +10,11 @@
            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
            alt="Photo of a Shiba Inu">
       <mat-card-actions>
-        <button [ngClass]="hasLiked(occurrence)? 'has-like-or-unlike' : '' " (click)="addLike(occurrence)"
-                mat-button>{{occurrence.like.length}} LIKE
+        <button [ngClass]="hasLiked(occurrence)? 'has-likes-or-unlikes' : '' " (click)="addLike(occurrence)"
+                mat-button>{{occurrence.likes?.length}} LIKE
         </button>
         <button mat-button>{{occurrence.views}} Views</button>
-        <button (click)="addUnlike(occurrence)" mat-button>{{occurrence.unlike.length}} UNLIKE</button>
+        <button (click)="addUnlike(occurrence)" mat-button>{{occurrence.unlikes?.length}} UNLIKE</button>
       </mat-card-actions>
     </mat-card>
   </div>
