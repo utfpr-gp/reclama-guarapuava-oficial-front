@@ -20,6 +20,7 @@ import {
   MatSidenavModule,
   MatSnackBarModule,
   MatSortModule,
+  MatStepperModule,
   MatToolbarModule,
   MatTreeModule,
   ShowOnDirtyErrorStateMatcher
@@ -58,15 +59,10 @@ const MATERIAL_MODULES = [
   MatSidenavModule,
   MatSelectModule,
   MatSortModule,
+  MatSnackBarModule,
   MatToolbarModule,
   MatTreeModule,
   MatGridListModule,
-  MatCardModule,
-  MatMenuModule,
-  MatIconModule,
-  MatButtonModule,
-  LayoutModule,
-  MatSnackBarModule,
 ];
 
 const COMPONENTS = [

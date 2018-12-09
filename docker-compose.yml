@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  webapp:
+    image: lucassartori/angular-cli
+    container_name: ng_app
+    ports:
+      - 0.0.0.0:4200:4200
+      - 0.0.0.0:9000:9000
+    volumes:
+      - .:/home/ng
+    tty: true
+    environment:
+      NODE_ENV: development
